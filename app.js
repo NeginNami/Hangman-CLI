@@ -82,6 +82,10 @@ var game= function () {
     	});
 
 	}
+	else{
+		console.log("Sorry You Are Out Of Your Chances.You Lost!");
+		console.log("The Answer Was "+"\""+current_word.word+"\"");
+	}
 	
 	
 }
