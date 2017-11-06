@@ -8,7 +8,7 @@ function Letter(letter) {
 			console.log(" _ ");
 		else
 			console.log(" "+this.letter+" ");
-	}
-}
+	};
+};
 
 module.exports= Letter;
