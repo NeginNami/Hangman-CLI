@@ -3,11 +3,11 @@ function Letter(letter) {
 	this.letter=letter;
 	this.guessed=false;
 
-	this.print_letter= function() {
+	this.return_letter_for_print= function() {
 		if (this.guessed===false)
-			console.log(" _ ");
+			return(" _ ");
 		else
-			console.log(" "+this.letter+" ");
+			return(" "+this.letter+" ");
 	};
 };
 
