@@ -14,11 +14,8 @@ var won=false;
 var end=false;
 var right_guess_counter=0;
 
-console.log(current_word.word);
-console.log(current_word.word.length);
-
 for (var i = 0; i < current_word.word.length; i++) {
-	//current_word.letters.push(current_word.word.charAt(i));
+	
 	current_word.add_letter(current_word.word.charAt(i));
 } 
 
@@ -43,17 +40,12 @@ var game= function () {
 	     			}
 	     		}
 	     	}
-	     		
-	     	else{
-
-	     	}
+	  
 	     	var str="";
-	     	for (var i = 0; i < current_word.word.length; i++) {
+	     	for (var i = 0; i < current_word.word.length; i++) 
 	     		
 	     		str+=current_word.letters[i].return_letter_for_print();
-	     		//current_word.letters[i].print_letter();
 
-	     	}
 	     	console.log(str);
 
 	     	//Checks the number of correct guesses, if that is equal to the letters number in the current word, means user already won.
@@ -67,12 +59,10 @@ var game= function () {
 	     		right_guess_counter=0;
 
 
-	     	//console.log(current_word);
+	     	
 	     	console.log("right_guess_counter: "+right_guess_counter);
 	     	console.log("won: "+won);
-	     	//console.log(current_word.word.charAt(1));
-	     	//console.log(answer.letter_guessed);
-	     	//console.log(current_word.word.indexOf(answer.letter_guessed)); 
+	     
 	      
 	      chances--;
 	      
@@ -110,7 +100,7 @@ var game= function () {
 
 	}
 }
-//game();
+
 check_round();
 
 function check_round() {
@@ -118,9 +108,9 @@ function check_round() {
 	inquirer.prompt([
 	{
 		name:"newRound",
-		message:"Do You Want To Start a New Game?"
+		message:"Do You Want To Start a New Game? (Type yes or no)"
 	}]).then(function (answer) {
-		//console.log(answer.newRound);
+		
 		if (answer.newRound==="yes") 
 			game();
 	});
