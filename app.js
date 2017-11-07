@@ -78,8 +78,19 @@ var game= function () {
 	      
 	     if (won===false) 
 	      	game();
-	     else if (won===true) 
+	     else if (won===true) {
 	      	console.log("Congratulations! You won!");
+	      	chances=15;
+			random_number= Math.floor(Math.random() * 10);
+			current_word=new Word(animation_movies_array[random_number]);
+			won=false;
+			end=false;
+			right_guess_counter=0; 
+			for (var i = 0; i < current_word.word.length; i++) 
+				current_word.add_letter(current_word.word.charAt(i));
+			 
+	      	check_round(); 
+	      }
 	     	
     	});
 
@@ -87,19 +98,31 @@ var game= function () {
 	else{
 		console.log("Sorry You Are Out Of Your Chances.You Lost!");
 		console.log("The Answer Was "+"\""+current_word.word+"\"");
+		chances=15;
+		random_number= Math.floor(Math.random() * 10);
+		current_word=new Word(animation_movies_array[random_number]);
+		won=false;
+		end=false;
+		right_guess_counter=0; 
+		for (var i = 0; i < current_word.word.length; i++) 
+			current_word.add_letter(current_word.word.charAt(i));
+		check_round();
+
 	}
 }
-game();
-/*check_round();
+//game();
+check_round();
 
 function check_round() {
+	console.log(" ");
 	inquirer.prompt([
 	{
 		name:"newRound",
 		message:"Do You Want To Start a New Game?"
 	}]).then(function (answer) {
 		//console.log(answer.newRound);
-		return answer.newRound;
+		if (answer.newRound==="yes") 
+			game();
 	});
 }
-*/
+
