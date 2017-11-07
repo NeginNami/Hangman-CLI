@@ -1,0 +1,23 @@
+{
+  "name": "hang_man",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "inquirer": "^3.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeginNami/Hangman-CLI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeginNami/Hangman-CLI/issues"
+  },
+  "homepage": "https://github.com/NeginNami/Hangman-CLI#readme"
+}
