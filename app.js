@@ -5,12 +5,13 @@ var inquirer = require("inquirer");
 
 var Word=require("./word.js");
 var inquirer = require("inquirer");
-var animation_movies_array=["tangled","frozen","cinderella","alladin","cars","mulan","pocahontas","zootopia","kubo","Ratatouille"];
+var animation_movies_array=["tangled","frozen","cinderella","alladin","cars","mulan","pocahontas","zootopia","kubo","ratatouille"];
 var if_user_desired_a_new_round=true;
 var chances=15;
 var random_number= Math.floor(Math.random() * 10);
 var current_word=new Word(animation_movies_array[random_number]);
 var won=false;
+var end=false;
 var right_guess_counter=0;
 
 console.log(current_word.word);
@@ -23,6 +24,7 @@ for (var i = 0; i < current_word.word.length; i++) {
 
 
 var game= function () {
+
 
 	console.log(" ");
 	if (chances>0) {
@@ -86,7 +88,18 @@ var game= function () {
 		console.log("Sorry You Are Out Of Your Chances.You Lost!");
 		console.log("The Answer Was "+"\""+current_word.word+"\"");
 	}
-	
-	
 }
 game();
+/*check_round();
+
+function check_round() {
+	inquirer.prompt([
+	{
+		name:"newRound",
+		message:"Do You Want To Start a New Game?"
+	}]).then(function (answer) {
+		//console.log(answer.newRound);
+		return answer.newRound;
+	});
+}
+*/
